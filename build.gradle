@@ -12,12 +12,12 @@ plugins {
 }
 
 allprojects {
-	repositories {
-		jcenter()
-	}
-	apply plugin: 'maven'
-	apply plugin: 'maven-publish'
-	apply plugin: 'java'
+  repositories {
+    jcenter()
+  }
+  apply plugin: 'maven'
+  apply plugin: 'maven-publish'
+  apply plugin: 'java'
 }
 
 apply plugin: 'groovy'
@@ -51,19 +51,19 @@ idea {
 }
 dependencies {
     compile("org.quartz-scheduler:quartz:2.2.3")
-    compile("org.mongodb:mongodb-driver:3.9.1")
-    compile("commons-codec:commons-codec:1.10")
-    compile("org.slf4j:slf4j-api:1.7.21")
+    compile("org.mongodb:mongodb-driver:3.11.0")
+    compile("commons-codec:commons-codec:1.13")
+    compile("org.slf4j:slf4j-api:1.7.28")
 
-    compileOnly("org.clojure:clojure:1.10.0")
+    compileOnly("org.clojure:clojure:1.10.1")
 
-    testCompile("org.clojure:clojure:1.10.0")
-    testCompile("joda-time:joda-time:2.8.2")
-    testCompile("org.slf4j:slf4j-simple:1.7.10")
+    testCompile("org.clojure:clojure:1.10.1")
+    testCompile("joda-time:joda-time:2.10.4")
+    testCompile("org.slf4j:slf4j-simple:1.7.28")
     testCompile("org.codehaus.groovy:groovy-all:2.4.1")
     testCompile("org.spockframework:spock-core:1.0-groovy-2.4")
-    testRuntime("cglib:cglib-nodep:3.1")
-    testRuntime("org.objenesis:objenesis:2.1")
+    testRuntime("cglib:cglib-nodep:3.3.0")
+    testRuntime("org.objenesis:objenesis:3.0.1")
 }
 
 release {
@@ -149,8 +149,8 @@ bintray {
 
         version {
             name = projectVersion
-			      desc = 'MongoDB-backed job store for the Quartz scheduler'
-			      vcsTag = projectVersion
+            desc = 'MongoDB-backed job store for the Quartz scheduler'
+            vcsTag = projectVersion
         }
     }
 }
